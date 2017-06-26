@@ -1,7 +1,7 @@
 {
    "class": "CommandLineTool",
    "cwlVersion": "v1.0",
-   "id": "demotool_cwl",
+   "id": "demotool",
    "baseCommand": [
       "python",
       "calculate_risk.py"
