@@ -99,7 +99,6 @@
         }
     ],
     "sbg:validationErrors": [],
-    "sbg:projectName": "API_Demo_ToolMaintenance",
     "sbg:latestRevision": 0,
     "sbg:wrapperLicense": "Apache Licence 2.0",
     "sbg:categories": [
