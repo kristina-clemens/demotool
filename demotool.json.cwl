@@ -1,7 +1,7 @@
 {
     "class": "CommandLineTool",
     "cwlVersion": "v1.0",
-    "id": "risk-score",
+    "id": "sinan.yavuz/api-demo-toolmaintenance/risk-score-2/0",
     "baseCommand": [
         "python",
         "/opt/calculate_risk.py"
@@ -78,7 +78,7 @@
         }
     },
     "sbg:sbgMaintained": false,
-    "sbg:id": "sinan.yavuz_demo/risk-score/risk-score/0",
+    "sbg:id": "sinan.yavuz/api-demo-toolmaintenance/risk-score-2/0",
     "sbg:revisionsInfo": [
         {
             "sbg:revision": 0,
@@ -99,6 +99,7 @@
         }
     ],
     "sbg:validationErrors": [],
+    "sbg:projectName": "API_Demo_ToolMaintenance",
     "sbg:latestRevision": 0,
     "sbg:wrapperLicense": "Apache Licence 2.0",
     "sbg:categories": [
