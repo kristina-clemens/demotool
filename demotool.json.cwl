@@ -1,7 +1,7 @@
 {
     "class": "CommandLineTool",
     "cwlVersion": "v1.0",
-    "id": "sinan.yavuz/api-demo-toolmaintenance/risk-score-2/0",
+    "id": "risk-score",
     "baseCommand": [
         "python",
         "/opt/calculate_risk.py"
