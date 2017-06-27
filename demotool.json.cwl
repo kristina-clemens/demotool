@@ -1,122 +1,136 @@
 {
-    "class": "CommandLineTool",
-    "cwlVersion": "v1.0",
-    "id": "risk-score",
-    "baseCommand": [
-        "python",
-        "/opt/calculate_risk.py"
-    ],
-    "inputs": [
-        {
-            "sbg:category": "Input",
-            "id": "quant_sf",
-            "type": "File",
-            "inputBinding": {
-                "position": 0,
-                "prefix": "--quant_sf"
-            },
-            "label": "Gene Quantification File",
-            "doc": "Gene quantification file created by Salmon Quantification tool.",
-            "format": [
-                "SF"
-            ],
-            "secondaryFiles": []
-        },
-        {
-            "sbg:category": "Input",
-            "id": "sample_ids",
-            "type": "string?",
-            "inputBinding": {
-                "position": 0,
-                "prefix": "--sample_id"
-            },
-            "label": "Sample IDs",
-            "doc": "Sample IDs in the order with quant_sf files.",
-            "secondaryFiles": []
-        }
-    ],
-    "outputs": [
-        {
-            "id": "output",
-            "doc": "Calculated risk scores.",
-            "label": "Risk Scores",
-            "type": "File",
-            "outputBinding": {
-                "glob": "*.tsv"
-            },
-            "format": [
-                "TSV"
-            ]
-        }
-    ],
-    "doc": "This simple script calculates lung adenocarcinoma prognostic risk score from Salmon quantification results using the formula published by [Cai *et al.*](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175850)",
-    "label": "Risk Score 2",
-    "requirements": [
-        {
-            "class": "ResourceRequirement",
-            "ramMin": 1000,
-            "coresMin": 1
-        },
-        {
-            "class": "DockerRequirement",
-            "dockerPull": "images.sbgenomics.com/sinan_yavuz_demo/demotool:5900601"
-        }
-    ],
-    "sbg:job": {
-        "inputs": {
-            "quant_sf": {
-                "size": 0,
-                "path": "/path/to/quant_sf.ext",
-                "secondaryFiles": [],
-                "class": "File"
-            },
-            "sample_ids": "sample_ids-string-value"
-        },
-        "runtime": {
-            "cores": 1,
-            "ram": 1000
-        }
+  "sbg:latestRevision": 2,
+  "sbg:categories": [
+    "Other"
+  ],
+  "sbg:modifiedOn": 1498575730,
+  "sbg:license": "Creative Commons Attribution 4.0",
+  "sbg:revision": 2,
+  "sbg:sbgMaintained": false,
+  "description": "This simple script calculates lung adenocarcinoma prognostic risk score from Salmon quantification results using the formula published by [Cai *et al.*](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175850)",
+  "sbg:toolkitVersion": "v1.0",
+  "outputs": [
+    {
+      "sbg:fileTypes": "TSV",
+      "id": "#risk_scores",
+      "type": [
+        "null",
+        "File"
+      ],
+      "description": "Calculated risk scores.",
+      "outputBinding": {
+        "glob": "*.tsv"
+      },
+      "label": "Risk Scores"
+    }
+  ],
+  "arguments": [],
+  "sbg:toolkit": "Risk Score",
+  "baseCommand": [
+    "python",
+    "/opt/calculate_risk.py"
+  ],
+  "requirements": [],
+  "sbg:id": "sinan.yavuz/api-demo-toolmaintenance/risk-score/2",
+  "sbg:project": "sinan.yavuz_demo/risk-score",
+  "temporaryFailCodes": [],
+  "class": "CommandLineTool",
+  "sbg:job": {
+    "inputs": {
+      "quant_sf": {
+        "size": 0,
+        "path": "/path/to/quant_sf.ext",
+        "secondaryFiles": [],
+        "class": "File"
+      },
+      "sample_ids": [
+        "sample_ids-string-value-1",
+        "sample_ids-string-value-2"
+      ]
     },
-    "sbg:sbgMaintained": false,
-    "sbg:id": "sinan.yavuz/api-demo-toolmaintenance/risk-score-2/0",
-    "sbg:revisionsInfo": [
+    "allocatedResources": {
+      "mem": 1000,
+      "cpu": 1
+    }
+  },
+  "sbg:createdBy": "sinan.yavuz",
+  "label": "Risk Score",
+  "sbg:image_url": null,
+  "stdout": "",
+  "id": "risk-score",
+  "sbg:contributors": [
+    "sinan.yavuz"
+  ],
+  "hints": [
+    {
+      "value": 1,
+      "class": "sbg:CPURequirement"
+    },
+    {
+      "value": 1000,
+      "class": "sbg:MemRequirement"
+    },
+    {
+      "dockerImageId": "",
+      "dockerPull": "images.sbgenomics.com/sinan_yavuz_demo/demotool:5900601",
+      "class": "DockerRequirement"
+    }
+  ],
+  "sbg:toolAuthor": "Cai et al.",
+  "stdin": "",
+  "sbg:cmdPreview": "python /opt/calculate_risk.py --quant_sf /path/to/quant_sf.ext",
+  "sbg:createdOn": 1498573859,
+  "sbg:modifiedBy": "sinan.yavuz",
+  "inputs": [
+    {
+      "sbg:fileTypes": "SF",
+      "id": "#quant_sf",
+      "type": [
+        "File"
+      ],
+      "inputBinding": {
+        "separate": true,
+        "sbg:cmdInclude": true,
+        "position": 1,
+        "prefix": "--quant_sf"
+      },
+      "description": "Gene quantification file created by Salmon Quantification tool.",
+      "sbg:category": "Input",
+      "label": "Gene Quantification File"
+    },
+    {
+      "id": "#sample_ids",
+      "type": [
+        "null",
         {
-            "sbg:revision": 0,
-            "sbg:modifiedBy": "sinan.yavuz",
-            "sbg:modifiedOn": 1498574418,
-            "sbg:revisionNotes": null
+          "items": "string",
+          "type": "array"
         }
-    ],
-    "sbg:wrapperAuthor": "A. Sinan Yavuz",
-    "sbg:toolkit": "Risk Score",
-    "sbg:revision": 0,
-    "sbg:createdOn": 1498574418,
-    "sbg:modifiedBy": "sinan.yavuz",
-    "sbg:links": [
-        {
-            "label": "Article",
-            "id": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175850"
-        }
-    ],
-    "sbg:validationErrors": [],
-    "sbg:latestRevision": 0,
-    "sbg:wrapperLicense": "Apache Licence 2.0",
-    "sbg:categories": [
-        "Other"
-    ],
-    "sbg:modifiedOn": 1498574418,
-    "sbg:license": "CC BY 4.0",
-    "description": "",
-    "sbg:toolkitVersion": "v1.0",
-    "sbg:modified": true,
-    "sbg:createdBy": "sinan.yavuz",
-    "sbg:image_url": null,
-    "sbg:contributors": [
-        "sinan.yavuz"
-    ],
-    "sbg:project": "sinan.yavuz/api-demo-toolmaintenance",
-    "sbg:toolAuthor": "Cai et al.",
-    "sbg:appVersion": [
-        "v1.0"
-    ]
+      ],
+      "inputBinding": {
+        "separate": true,
+        "itemSeparator": ",",
+        "sbg:cmdInclude": true,
+        "position": 2,
+        "prefix": "--sample_id"
+      },
+      "description": "Sample IDs in the order with quantification files.",
+      "sbg:stageInput": null,
+      "label": "Sample IDs"
+    }
+  ],
+  "sbg:links": [
+    {
+      "id": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175850",
+      "label": "Article"
+    }
+  ],
+  "sbg:appVersion": [
+    "sbg:draft-2"
+  ],
+  "sbg:revisionNotes": "Initial commit",
+  "cwlVersion": "sbg:draft-2",
+  "successCodes": [],
+  "sbg:validationErrors": [],
+  "sbg:projectName": "Risk_Score"
 }
