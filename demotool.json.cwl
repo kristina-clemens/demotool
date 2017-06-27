@@ -1,4 +1,5 @@
 {
+
    "class": "CommandLineTool",
    "cwlVersion": "v1.0",
    "id": "demotool",
