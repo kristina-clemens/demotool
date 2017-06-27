@@ -5,7 +5,7 @@
    "id": "demotool",
    "baseCommand": [
       "python",
-      "calculate_risk.py"
+      "/opt/calculate_risk.py"
    ],
    "inputs": [
       {
