@@ -132,5 +132,5 @@
   "cwlVersion": "sbg:draft-2",
   "successCodes": [],
   "sbg:validationErrors": [],
-  "sbg:projectName": "Risk_Score"
+  "sbg:projectName": "Risk_Score_Test"
 }

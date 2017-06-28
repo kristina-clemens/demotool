@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 from docopt import docopt
 
-tool_version = 1.0
+tool_version = 0.1
 
 args = docopt(__doc__, version=tool_version)
 input_files = args["--quant_sf"].split(",")
