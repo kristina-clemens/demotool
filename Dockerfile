@@ -7,6 +7,7 @@ RUN apt-get update && apt-get -y install python python-numpy python-pandas pytho
 COPY Dockerfile /opt/
 
 COPY calculate_risk.py /opt/
+
 CMD /bin/bash
  
 # Maintainer
