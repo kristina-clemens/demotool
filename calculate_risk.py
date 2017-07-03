@@ -55,4 +55,6 @@ for idx, filename in enumerate(input_files):
                         "Risk_Score": total_score})
 
 results = pd.DataFrame(risk_scores, columns=["Sample_ID", "Risk_Score"])
+
 results.to_csv("Risk_Scores.tsv", sep="\t", index=False)
+
