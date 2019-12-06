@@ -9,4 +9,4 @@ COPY calculate_risk.py /opt/
 CMD /bin/bash
 
 # Maintainer
-MAINTAINER Sinan Yavuz, Seven Bridges <sinan.yavuz@sbgenomics.com>
+MAINTAINER Kristina Clemens, Seven Bridges <kristina.clemens@sevenbridges.com>
